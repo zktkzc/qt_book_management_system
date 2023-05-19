@@ -9,17 +9,26 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bookmgr.cpp \
     login.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    recordmgr.cpp \
+    usermgr.cpp
 
 HEADERS += \
+    bookmgr.h \
     login.h \
-    mainwindow.h
+    mainwindow.h \
+    recordmgr.h \
+    usermgr.h
 
 FORMS += \
+    bookmgr.ui \
     login.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    recordmgr.ui \
+    usermgr.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,3 +37,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res.qrc
+    app.rc
+
+# 添加图标
+RC_FILE += ./res/app.rc

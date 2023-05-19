@@ -6,12 +6,44 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>775</width>
-    <height>621</height>
+    <width>994</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Qt 图书管理系统</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton[name=&quot;btn&quot;]{
+	border-radius: 4px;
+	background: #409eff;
+	color: white;
+	font-size: 14px;
+	min-height: 28px;
+	min-width: 85px;
+	padding: 4px;
+}
+
+QLineEdit[name=&quot;le&quot;]{
+	border-radius: 4px;
+	min-height: 25px;
+	border: 1px solid gray;
+	max-width: 280px;
+	min-width: 280px;
+}
+
+QLabel[name=&quot;lb&quot;]{
+	font: 18px '黑体';	
+}
+
+QLabel[name=&quot;title&quot;]{
+	font: 14px '宋体';
+	color: blue;
+}
+
+QWidget[name=&quot;bg&quot;]{
+	background-color: white;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -76,19 +108,6 @@ QWidget#tool QToolButton:checked{
        <property name="verticalSpacing">
         <number>0</number>
        </property>
-       <item row="4" column="0">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="0" column="0">
         <widget class="QToolButton" name="btn_user">
          <property name="sizePolicy">
@@ -119,9 +138,12 @@ QWidget#tool QToolButton:checked{
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="2" column="0">
         <widget class="QToolButton" name="btn_his">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -142,35 +164,15 @@ QWidget#tool QToolButton:checked{
           <iconset resource="res.qrc">
            <normaloff>:/res/tool.svg</normaloff>:/res/tool.svg</iconset>
          </property>
-         <property name="toolButtonStyle">
-          <enum>Qt::ToolButtonTextBesideIcon</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QToolButton" name="btn_record">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string> 借阅管理</string>
-         </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/res/tool.svg</normaloff>:/res/tool.svg</iconset>
+         <property name="checkable">
+          <bool>true</bool>
          </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item row="1" column="0">
@@ -194,19 +196,35 @@ QWidget#tool QToolButton:checked{
           <iconset resource="res.qrc">
            <normaloff>:/res/tool.svg</normaloff>:/res/tool.svg</iconset>
          </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
          <property name="toolButtonStyle">
           <enum>Qt::ToolButtonTextBesideIcon</enum>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
         </widget>
+       </item>
+       <item row="3" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QStackedWidget" name="stackedWidget">
-      <widget class="QWidget" name="page"/>
-      <widget class="QWidget" name="page_2"/>
-     </widget>
+     <widget class="QStackedWidget" name="stackedWidget"/>
     </item>
    </layout>
   </widget>
@@ -215,4 +233,7 @@ QWidget#tool QToolButton:checked{
   <include location="res.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
