@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     recordmgr.cpp \
+    sqlmgr.cpp \
     usermgr.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     login.h \
     mainwindow.h \
     recordmgr.h \
+    sqlmgr.h \
     usermgr.h
 
 FORMS += \

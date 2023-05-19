@@ -7,6 +7,8 @@ UserMgr::UserMgr(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tableView->setModel(&m_model);
+    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers); // 不可编辑
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows); // 选中整行
     m_model.setHorizontalHeaderLabels(QStringList{"用户ID", "年级", "部门", "用户名", "密码", "昵称", "权限"});
     QList<QStandardItem*> items;
     items.append(new QStandardItem("1"));
